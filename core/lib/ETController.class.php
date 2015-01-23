@@ -754,7 +754,7 @@ protected function aggregateFiles($files, $type)
 	}
 
 	// Construct a filename for the aggregation file based on the individual filenames.
-	$file = PATH_ROOT."/cache/$type/".implode(",", $filenames).".$type";
+	$file = PATH_ROOT."/cache/$type/".implode("-", $filenames).".$type";
 
 	// If this file doesn't exist, or if it is out of date, generate and write it.
 	if (!file_exists($file) or filemtime($file) < $lastModTime) {
